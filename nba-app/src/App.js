@@ -12,8 +12,8 @@ function App() {
     <div className="App">
       <NavBar />
       <Route exact path="/" component={LoginForm} />
-      <PrivateRoute path="/login" component={LoginForm} />
-      <PrivateRoute path="/register" component={RegisterForm} />
+      <Route path="/login" component={LoginForm} />
+      <Route path="/register" component={RegisterForm} />
     </div>
   );
 }

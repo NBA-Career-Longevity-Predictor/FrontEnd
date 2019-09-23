@@ -31,7 +31,6 @@ class Login extends React.Component {
   };
 
   render() {
-      console.log("running");
     return (
       <div>
         <br />
