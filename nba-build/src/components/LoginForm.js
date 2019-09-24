@@ -17,7 +17,7 @@ margin: auto;
 text-align: center;
 // border: 4px solid black;
 color: black;
-margin-top: 7.2rem;
+margin-top: 10rem;
 `;
 
 const FormFields = styled.div`
@@ -29,8 +29,11 @@ width: 400px;
 display: flex;
 flex-direction: column;
 margin: 20px auto;
-
 input{
+    ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+        color: black;
+      }
+    text-decoration: inherit;
     text-align: center;
     // padding: 10px
     border-radius: 7px;
@@ -40,9 +43,14 @@ input{
     height: 2.5rem;
     border: 2px solid black;
     transition: 0.2s ease-in;
+    
     &:hover{
         color: white;
         background: black;
+        transition: 0.2s ease-in;
+        ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+            color: white;
+          }
     }
 }
 // .error{
@@ -57,7 +65,6 @@ input{
     font-size: 15px;
 }
 
-  
 `;
 
 const FormButton = styled.button`
@@ -75,6 +82,10 @@ margin-top: 15px;
     color: white;
     background: black;
 }
+`;
+
+const Bottom = styled.div`
+margin-bottom: 10rem;
 `;
 
 
@@ -105,10 +116,10 @@ const UserForm = ({ values, errors, touched, status }) => {
                 </FormFields>
             </Form>
 
-            <div>
+            <Bottom class="bottom-form">
                 <p>Don't have an account? <a href="#" >Register</a></p>
                 <p><a href="#" >Recover Password</a></p>
-            </div>
+            </Bottom>
             
             {user.map(users => (
                 <ul key={users.id}>
