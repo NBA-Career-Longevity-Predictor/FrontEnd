@@ -21,8 +21,8 @@ class Login extends React.Component {
 
   login = e => {
     e.preventDefault();
-    axiosWithAuth("https://nba-career-longevity.herokuapp.com/login")
-      .post("/login", this.state.credentials)
+    axiosWithAuth("https://nba-career-longevity.herokuapp.com/users/username")
+      .post("/users/username", this.state.credentials)
       .then(res => {
         localStorage.setItem("token", res.data.payload);
         this.props.history.push("/login");
