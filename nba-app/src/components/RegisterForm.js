@@ -1,6 +1,7 @@
 import React from "react";
-import { axiosWithAuth } from "../utils/axiosWithAuth";
 import styled from "styled-components";
+// import { axiosWithAuth } from "../utils/axiosWithAuth";
+import axios from "axios";
 
 class Register extends React.Component {
   state = {
@@ -9,7 +10,7 @@ class Register extends React.Component {
     //   lastname: "",
       username: "",
       password: "",
-      email: ""
+      useremail: ""
     }
   };
 
@@ -24,11 +25,11 @@ class Register extends React.Component {
 
   register = e => {
     e.preventDefault();
-    axiosWithAuth("https://nba-career-longevity.herokuapp.com/signup")
-      .post("/register", this.state.credentials)
+    // axiosWithAuth("https://nba-career-longevity.herokuapp.com")
+      axios.post("https://nba-career-longevity.herokuapp.com/createnewuser", this.state.credentials)
       .then(res => {
-        localStorage.setItem("token", res.data.payload);
-        this.props.history.push("/");
+        // localStorage.setItem("token", res.data.payload);
+        this.props.history.push("/login");
       })
       .catch(err => console.log(err));
   };
@@ -67,10 +68,10 @@ class Register extends React.Component {
             placeholder=" Password"
             onChange={this.handleChange}
           />
-          <TheInput
+          <TheInput2
             type="email"
-            name="email"
-            value={this.state.credentials.email}
+            name="useremail"
+            value={this.state.credentials.useremail}
             placeholder=" Email"
             onChange={this.handleChange}
           />
@@ -84,9 +85,16 @@ class Register extends React.Component {
 export default Register;
 
 const TheInput = styled.input`
+  align-items: center;
   border: 2px solid black;
   margin-right: 5px;
+  padding-left: 5px;
+`;
+
+const TheInput2 = styled.input`
   align-items: center;
+  border: 2px solid black;
+  margin-right: 5px;
 `;
 
 const TheBtn = styled.button`

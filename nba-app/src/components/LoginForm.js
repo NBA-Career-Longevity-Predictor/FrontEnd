@@ -1,5 +1,5 @@
 import React from "react";
-import { axiosWithAuth } from "../utils/axiosWithAuth";
+import { axiosLoginAuth } from "../utils/axiosWithAuth";
 import styled from "styled-components";
 
 class Login extends React.Component {
@@ -21,11 +21,17 @@ class Login extends React.Component {
 
   login = e => {
     e.preventDefault();
-    axiosWithAuth("https://nba-career-longevity.herokuapp.com/users/username")
-      .post("/users/username", this.state.credentials)
+    // console.log("nick")
+    // axiosWithAuth("https://nba-career-longevity.herokuapp.com/users/username")
+    axiosLoginAuth()
+      .post("/login",
+        `grant_type=password&username=${this.state.credentials.username}&password=${this.state.credentials.password}`,
+        this.state.credentials
+      )
       .then(res => {
+        // console.log("banana");
         localStorage.setItem("token", res.data.payload);
-        this.props.history.push("/login");
+        this.props.history.push("/");
       })
       .catch(err => console.log(err));
   };
@@ -60,14 +66,15 @@ class Login extends React.Component {
 export default Login;
 
 const TheInput = styled.input`
+  align-items: center;
   border: 2px solid black;
   margin-right: 5px;
-  align-items: center;
+  padding-left: 5px;
 `;
 
 const TheBtn = styled.button`
   align-items: center;
-  border: 1px solid black;
+  border: 3px solid black;
   border-radius: 4px;
   font-size: 1.5rem;
   margin-left: 15px;

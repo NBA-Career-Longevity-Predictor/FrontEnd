@@ -2,7 +2,7 @@ import React from 'react';
 import { Route } from "react-router-dom";
 import './App.scss';
 
-import PrivateRoute from "./components/PrivateRoute";
+// import PrivateRoute from "./components/PrivateRoute";
 import LoginForm from "./components/LoginForm";
 import RegisterForm from "./components/RegisterForm";
 import NavBar from "./components/NavBar";
