@@ -5,8 +5,8 @@ import styled from "styled-components";
 class Register extends React.Component {
   state = {
     credentials: {
-      firstname: "",
-      lastname: "",
+    //   firstname: "",
+    //   lastname: "",
       username: "",
       password: "",
       email: ""
@@ -24,7 +24,7 @@ class Register extends React.Component {
 
   register = e => {
     e.preventDefault();
-    axiosWithAuth()
+    axiosWithAuth("https://nba-career-longevity.herokuapp.com/signup")
       .post("/register", this.state.credentials)
       .then(res => {
         localStorage.setItem("token", res.data.payload);
@@ -39,7 +39,7 @@ class Register extends React.Component {
         <br />
         <br />
         <form onSubmit={this.register}>
-          <TheInput
+          {/* <TheInput
             type="text"
             name="firstname"
             value={this.state.credentials.firstname}
@@ -52,7 +52,7 @@ class Register extends React.Component {
             value={this.state.credentials.lastname}
             placeholder=" Last Name"
             onChange={this.handleChange}
-          />
+          /> */}
           <TheInput
             type="text"
             name="username"
