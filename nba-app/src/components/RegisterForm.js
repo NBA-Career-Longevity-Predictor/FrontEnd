@@ -1,13 +1,10 @@
 import React from "react";
 import styled from "styled-components";
-// import { axiosWithAuth } from "../utils/axiosWithAuth";
 import axios from "axios";
 
 class Register extends React.Component {
   state = {
     credentials: {
-    //   firstname: "",
-    //   lastname: "",
       username: "",
       password: "",
       useremail: ""
@@ -40,20 +37,6 @@ class Register extends React.Component {
         <br />
         <br />
         <form onSubmit={this.register}>
-          {/* <TheInput
-            type="text"
-            name="firstname"
-            value={this.state.credentials.firstname}
-            placeholder=" First Name"
-            onChange={this.handleChange}
-          />
-          <TheInput
-            type="text"
-            name="lastname"
-            value={this.state.credentials.lastname}
-            placeholder=" Last Name"
-            onChange={this.handleChange}
-          /> */}
           <TheInput
             type="text"
             name="username"
