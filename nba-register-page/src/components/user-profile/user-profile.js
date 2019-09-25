@@ -60,6 +60,9 @@ const Button = styled.button `
     background: black;
     }
 `
+const Password = styled.p `
+    display: none;
+`
 
 const UserProfile = (props) => {
   return (
@@ -67,12 +70,13 @@ const UserProfile = (props) => {
       <Card>
         <CardImg top width="100%" src={Placeholder} alt="Card image cap" />
         <CardBody>
-          <CardTitle>Stephen Curry</CardTitle>
+          <CardTitle>Stephen Curry</CardTitle> 
           <CardSubtitle>Favorite Player: </CardSubtitle>
           <CardSubtitle>Favorite Team: </CardSubtitle>
           <CardSubtitle>E-mail: <CardLink href="">chef.curry@inthehouse.com</CardLink></CardSubtitle>
           <CardSubtitle>Contact: <CardLink href="">+123 I-SHOOT-3S</CardLink></CardSubtitle>
           <CardText>Bio: Chef Curry shoots 3's and wins games</CardText>
+          <Password>Password: {props.password}</Password>
           <Button>Update info</Button>
         </CardBody>
       </Card>
