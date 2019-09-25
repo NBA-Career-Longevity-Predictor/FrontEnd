@@ -63,28 +63,22 @@ const Button = styled.button `
       background: black;
     }
 `
-export default class Example extends React.Component {
+export default class Register extends React.Component {
   render() {
     return (
       <Form>
         <FormGroup>
           <Title>Register</Title>
           <Input type="input" name="name" id="name" placeholder="Name" />
-        
           <Input type="input" name="lastName" id="lastName" placeholder="Last Name" />
-       
           <Input type="email" name="email" id="email" placeholder="Email" />
-       
           <Input type="password" name="password" id="password" placeholder="Password" />
-       
           <Input type="password" name="password" id="confirm" placeholder="Confirm password" />
-        
-        
           <Label check>
             <Checkbox type="checkbox" />
             Subscribe for more updates!
           </Label>
-          <Button>Register now!</Button>
+          <Button>Register now!</Button>  
         </FormGroup>
       </Form>
     );

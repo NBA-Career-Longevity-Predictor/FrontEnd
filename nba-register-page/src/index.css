@@ -11,3 +11,7 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+.darkmode-layer, .darkmode-toggle{
+  position: absolute !important;
+  bottom: 12px !important;
+}
