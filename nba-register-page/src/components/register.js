@@ -69,11 +69,11 @@ export default class Register extends React.Component {
       <Form>
         <FormGroup>
           <Title>Register</Title>
-          <Input type="input" name="name" id="name" placeholder="Name" />
-          <Input type="input" name="lastName" id="lastName" placeholder="Last Name" />
-          <Input type="email" name="email" id="email" placeholder="Email" />
-          <Input type="password" name="password" id="password" placeholder="Password" />
-          <Input type="password" name="password" id="confirm" placeholder="Confirm password" />
+          <Input type="input" name="name" id="name" placeholder="Name" required/>
+          <Input type="input" name="lastName" id="lastName" placeholder="Last Name" required/>
+          <Input type="email" name="email" id="email" placeholder="Email" required/>
+          <Input type="password" name="password" id="password" placeholder="Password" required/>
+          <Input type="password" name="password" id="confirm" placeholder="Confirm password" required/>
           <Label check>
             <Checkbox type="checkbox" />
             Subscribe for more updates!
