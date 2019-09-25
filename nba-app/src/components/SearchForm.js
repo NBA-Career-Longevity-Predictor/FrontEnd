@@ -1,75 +1,50 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import axios from 'axios';
 
-export default function SearchForm() {
-  const [name, setName] = useState();
-  const [search, setSearch] = useLocalStorage('search', '');
-  const [data, setData] = useState([]);
+class Search extends React.Component {
+    constructor() {
+        super();
+        this.state = {
+            name: "",
+            search: "",
+            data: []
+        }
+    }
+    componentDidMount() {
+        axios
+            .get()
+            .then(res => {
+                this.setState({ data: res.data.results });
+            })
+            .catch(err => console.log(err));
+    }
 
-  useEffect(() => {
-    axios
-      .get()
-      .then(res => {
-        console.log(res.data.results);
-        setData(res.data.results);
-      })
-      .catch(err => console.log(err));
-  }, [search])
+    handleInputChange = e => {
+        this.setState({ name: e.target.value });
+    }
 
-  const handleInputChange = event => {
-    setName(event.target.value);
-  }
-
-  const onSearch = event => {
-    event.preventDefault();
-    setSearch(name);
-  }
-
-  return (
-    <section className='search-form ui bottom attached segment active'>
-      <form onSubmit={onSearch}>
-        <div className='ui action input'>
-          <input
-            onChange={handleInputChange}
-            placeholder='name'
-            value={name}
-            name='name'
-          />
-          <button type='submit' className='ui icon button'>
-            <i className='search icon' />
-          </button>
+    onSearch = e => {
+        e.preventDefault();
+        this.setState({ search: this.name });
+    }
+    render() {
+    return (
+    <section>
+    <form onSubmit={this.onSearch}>
+        <div>
+            <input
+                onChange={this.handleInputChange}
+                placeholder='name'
+                value={this.name}
+                name='name'
+            />
+            <button type='submit'>
+            </button>
         </div>
-      </form>
-      <div className='grid-view'>
-        {data.map(character => {
-        //   return <CharacterCard key={character.id} character={character} />;
-        })}
-      </div>
-    </section>
+    </form>
+    </section >
   );
 }
-
-const useLocalStorage = (key, initialValue) => {
-  const [storedValue, setStoredValue] = useState(() => {
-    try {
-      const item = window.localStorage.getItem(key);
-      return item ? JSON.parse(item) : initialValue;
-    } catch (err) {
-      console.log(err);
-      return initialValue;
-    }
-  });
-
-  const setValue = value => {
-    try {
-      const valueToStore = 
-        value instanceof Function ? value(storedValue) : value;
-      setStoredValue(valueToStore);
-      window.localStorage.setItem(key, JSON.stringify(valueToStore));
-    } catch (err) {
-      console.log(err);
-    }
-  };
-
-  return [storedValue, setValue];
 }
+
+export default Search;

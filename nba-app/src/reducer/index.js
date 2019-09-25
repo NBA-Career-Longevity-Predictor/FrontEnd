@@ -28,7 +28,7 @@ export const reducer = (state = initialState, action) => {
       return {
         ...state,
         isFetching: false,
-        friends: action.payload
+        data: action.payload
       };
     case GET_NBA_DATA_FAILURE:
       return {
@@ -46,7 +46,7 @@ export const reducer = (state = initialState, action) => {
       return {
         ...state,
         isFetching: false,
-        friends: action.payload
+        data: action.payload
       };
     case POST_NBA_DATA_FAILURE:
       return {
@@ -64,7 +64,7 @@ export const reducer = (state = initialState, action) => {
       return {
         ...state,
         isFetching: false,
-        friends: action.payload
+        data: action.payload
       };
     case DELETE_NBA_DATA_FAILURE:
       return {
