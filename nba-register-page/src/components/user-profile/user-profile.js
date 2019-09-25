@@ -70,14 +70,15 @@ const UserProfile = (props) => {
       <Card>
         <CardImg top width="100%" src={Placeholder} alt="Card image cap" />
         <CardBody>
-          <CardTitle>Stephen Curry</CardTitle> 
-          <CardSubtitle>Favorite Player: </CardSubtitle>
-          <CardSubtitle>Favorite Team: </CardSubtitle>
-          <CardSubtitle>E-mail: <CardLink href="">chef.curry@inthehouse.com</CardLink></CardSubtitle>
-          <CardSubtitle>Contact: <CardLink href="">+123 I-SHOOT-3S</CardLink></CardSubtitle>
-          <CardText>Bio: Chef Curry shoots 3's and wins games</CardText>
+          <CardTitle>Stephen Curry{props.name}</CardTitle> 
+          <CardSubtitle>Username: {props.username} </CardSubtitle>
+          <CardSubtitle>Favorite Player: {props.favoritePlayer}</CardSubtitle>
+          <CardSubtitle>Favorite Team: {props.favoriteTeam}</CardSubtitle>
+          <CardSubtitle>E-mail: <CardLink href="">chef.curry@inthehouse.com{props.email}</CardLink></CardSubtitle>
+          <CardSubtitle>Contact: <CardLink href="">+123 I-SHOOT-3S{props.contact}</CardLink></CardSubtitle>
+          <CardText>Bio: Chef Curry shoots 3's and wins games{props.bio}</CardText>
           <Password>Password: {props.password}</Password>
-          <Button>Update info</Button>
+          <Button type="submit">Update info</Button>
         </CardBody>
       </Card>
     </div>
