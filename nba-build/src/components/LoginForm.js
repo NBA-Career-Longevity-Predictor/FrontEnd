@@ -8,6 +8,8 @@ import axios from "axios";
 
 import styled from "styled-components";
 
+import { Link } from "react-router-dom";
+
 const FormHeader = styled.h1`
 // padding: 20px;
 border-radius: 10px 10px 0 0;
@@ -21,6 +23,7 @@ margin-top: 10rem;
 `;
 
 const FormFields = styled.div`
+
 // padding: 20px;
 border-radius: 0 0 10px 10px;
 height: 15rem;
@@ -53,18 +56,11 @@ input{
           }
     }
 }
-// .error{
-//     color: red;
-//     position: absolute;
-//     display: flex;
-//     justify-content: center;
-// }
 .error{
     margin: 0;
     padding: 0;
     font-size: 15px;
 }
-
 `;
 
 const FormButton = styled.button`
@@ -85,21 +81,26 @@ margin-top: 15px;
 `;
 
 const Bottom = styled.div`
-margin-bottom: 10rem;
+// margin-bottom: 5rem;
+`;
+
+const FormContainer = styled.div`
+height: 70vh;
 `;
 
 
-const UserForm = ({ values, errors, touched, status }) => {
+const LoginForm = ({ values, errors, touched, status }) => {
 
-    const [ user, setUser ] = useState([]);
+    const [ login, setLogin ] = useState([]);
     useEffect(() => {
         if(status){
-            setUser([...user, status]);
+            setLogin([...login, status]);
         }
     }, [status]);
 
     return(
         <div className="formik-form">
+            <FormContainer>
             <FormHeader>Log in</FormHeader>
 
             <Form>
@@ -117,23 +118,22 @@ const UserForm = ({ values, errors, touched, status }) => {
             </Form>
 
             <Bottom class="bottom-form">
-                <p>Don't have an account? <a href="#" >Register</a></p>
+                <p>Don't have an account? <Link to="/RegistrationForm" className="register-button">Register</Link></p>
                 <p><a href="#" >Recover Password</a></p>
             </Bottom>
+            </FormContainer>
             
-            {user.map(users => (
-                <ul key={users.id}>
-                    <li>Name: {users.Name}</li>
-                    {/* <li>Email: {users.Email}</li> */}
-                    <li>Password: {users.Password}</li>
+            {login.map(logins => (
+                <ul key={logins.id}>
+                    <li>Name: {logins.Name}</li>
+                    <li>Password: {logins.Password}</li>
                 </ul>
             ))}
         </div>
     )
 }
 
-
-const FormikUserForm = withFormik({
+const FormikLoginForm = withFormik({
     mapPropsToValues({ Name, Password}){
         return{
             Name: Name || "",
@@ -152,8 +152,8 @@ const FormikUserForm = withFormik({
         })
         .catch(error => console.log("POST Err", error.response));
     }
-})(UserForm);
+})(LoginForm);
 
-console.log("HOC", FormikUserForm);
+console.log("HOC", FormikLoginForm);
 
-export default FormikUserForm;
+export default FormikLoginForm;

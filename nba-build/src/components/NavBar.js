@@ -2,6 +2,8 @@ import React from "react";
 
 import styled from "styled-components";
 
+import { Link } from "react-router-dom";
+
 const NavContainer = styled.nav`
     // position: fixed;
     width: 100%;
@@ -58,11 +60,11 @@ function NavBar(){
         
         <NavContainer>
             <a href="#">Logo</a>
-            <a href="#">Home</a>
+            <Link to="/" className="home-button">Home</Link>
             <a href="#">About</a>
-            <a href="#">Start</a>
             <a href="#">Contact</a>
-            <a href="#">NBA</a>
+            <Link to="/RegistrationForm/" className="Register Link">Register</Link>
+            <Link to="/LoginForm/" className="Login Link">Login</Link>
         </NavContainer>
     )
 }
