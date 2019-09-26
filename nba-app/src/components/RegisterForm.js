@@ -29,6 +29,7 @@ class Register extends React.Component {
         this.state.credentials
       )
       .then(res => {
+        console.log("register")
         // localStorage.setItem("token", res.data.payload);
         this.props.history.push("/login");
       })
@@ -39,9 +40,9 @@ class Register extends React.Component {
     return (
       <div>
         <Form>
-          <form onSubmit={this.register}>
+          <form>
             <FormGroup>
-              {/* <Title>Register</Title> */}
+              <Title>Register</Title>
               <Input
                 type="text"
                 name="username"
@@ -67,7 +68,7 @@ class Register extends React.Component {
                 <Checkbox type="checkbox" />
                 Subscribe for more updates!
               </Label>
-              <Button>Register</Button>
+              <Button onClick={this.register}>Register</Button>
             </FormGroup>
           </form>
         </Form>
@@ -87,14 +88,14 @@ const Form = styled.div`
   align-items: center;
 `;
 
-// const Title = styled.h1`
-//   width: 200px;
-//   text-align: center;
-//   font-size: 3.5rem;
-//   color: white;
-//   background-color: black;
-//   opacity: 0.7;
-// `;
+const Title = styled.h1`
+  width: 200px;
+  text-align: center;
+  font-size: 3.5rem;
+  color: white;
+  background-color: black;
+  opacity: 0.7;
+`;
 
 const FormGroup = styled.div`
   width: 400px;

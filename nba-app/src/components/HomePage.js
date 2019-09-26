@@ -1,9 +1,7 @@
 import React from "react";
 
-import { Link } from "react-router-dom";
-
+// import { Link } from "react-router-dom";
 // import HomeImage from "../images/HomeImage.jpg";
-
 import SearchForm from "../components/SearchForm";
 import Player from "./Player";
 
@@ -18,14 +16,14 @@ const Container = styled.div`
 function HomePage() {
   return (
     <Container>
-      <div>
+      {/* <div>
         <SearchForm />
       </div>
       {player.length > 0 ? (
         player.map(e => <Player key={e.id} player={e} />)
       ) : (
         <p>Waiting for search</p>
-      )}
+      )} */}
     </Container>
   );
 }

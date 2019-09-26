@@ -1,6 +1,7 @@
 import React from "react";
 import axios from "axios";
 import styled from "styled-components";
+import Player from "./Player";
 
 class Search extends React.Component {
   constructor() {
@@ -11,33 +12,28 @@ class Search extends React.Component {
       data: []
     };
   }
-  componentDidMount() {
-    axios
-      .get("https://nba-career-longevity.herokuapp.com/player/{name}")
-      .then(res => {
-        this.setState({ data: this.getPlayerData });
-      })
-      .catch(err => console.log(err));
-  }
 
   handleInputChange = e => {
     this.setState({ name: e.target.value });
   };
 
-  onSearch = e => {
-    e.preventDefault();
-    this.setState({ search: this.name });
-  };
-
   getPlayerData = e => {
-      e.preventDefault();
-      this.setState({ data: this.getPlayerData })
-  }
+    e.preventDefault();
+    axios
+      .get(
+        `https://nba-career-longevity.herokuapp.com/player/${this.state.name}`
+      )
+      .then(res => {
+        console.log(res.data);
+        this.setState({ data: res.data });
+      })
+      .catch(err => console.log(err));
+  };
 
   render() {
     return (
       <section>
-        <form onSubmit={this.onSearch}>
+        <form>
           <div>
             <Input
               onChange={this.handleInputChange}
@@ -49,6 +45,7 @@ class Search extends React.Component {
             <button onClick={this.getPlayerData}>Player Data</button>
           </div>
         </form>
+        <Player props={this.state.data}/>
       </section>
     );
   }
