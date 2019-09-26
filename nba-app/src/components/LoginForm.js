@@ -28,9 +28,10 @@ class Login extends React.Component {
         this.state.credentials
       )
       .then(res => {
-        // console.log("banana");
+        console.log("hello");
+        console.log(res.data);
         localStorage.setItem("token", res.data.payload);
-        this.props.history.push("/");
+        this.props.history.push("/home");
       })
       .catch(err => console.log(err));
   };
@@ -39,7 +40,7 @@ class Login extends React.Component {
     return (
       <div>
         <Form>
-          <form onSubmit={this.login}>
+          <form>
             <FormGroup>
             <Title>Log In</Title>
               <Input
@@ -57,8 +58,8 @@ class Login extends React.Component {
                 onChange={this.handleChange}
               />
             </FormGroup>
+          <Button onClick={this.login}>Log in</Button>
           </form>
-          <Button>Log in</Button>
         </Form>
       </div>
     );
@@ -66,12 +67,6 @@ class Login extends React.Component {
 }
 
 export default Login;
-
-// const Container = styled.div`
-// background-image: url("NbaMap.jpg");
-// background-size: cover;
-// background-repeat: no-repeat;
-// `;
 
 const Form = styled.div`
   width: 600px;
