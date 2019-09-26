@@ -61,8 +61,8 @@ function NavBar(){
         <NavContainer>
             <a href="#">Logo</a>
             <Link to="/" className="home-button">Home</Link>
-            <a href="#">About</a>
-            <a href="#">Contact</a>
+            <a href="https://nbacareer.netlify.com/about-us.html">About</a>
+            <a href="https://nbacareer.netlify.com/index.html#contact">Contact</a>
             <Link to="/RegistrationForm/" className="Register Link">Register</Link>
             <Link to="/LoginForm/" className="Login Link">Login</Link>
         </NavContainer>

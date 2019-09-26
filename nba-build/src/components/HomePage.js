@@ -12,6 +12,7 @@ const Container = styled.div`
 background-image: url("HomeImage.jpg");
 background-size: contain;
 background-repeat: no-repeat;
+width: 100%;
 }
 `;
 

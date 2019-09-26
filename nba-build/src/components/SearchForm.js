@@ -8,7 +8,6 @@ import axios from "axios";
 
 import styled from "styled-components";
 
-
 const FormFields = styled.div`
 opacity: 0.85;
 padding-top: 7rem;
