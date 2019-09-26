@@ -2,7 +2,7 @@
    v2.0 | 20110126
    License: none (public domain)
 */
-
+@import url('https://fonts.googleapis.com/css?family=Open+Sans&display=swap');
 html,
 body,
 div,
@@ -133,45 +133,46 @@ table {
 
 /* General Styles */
 
-* {
-  box-sizing: border-box;
-  text-decoration: none;
-  max-width: 1800px;
-  max-height: 675px;
-}
+// * {
+//   box-sizing: border-box;
+//   text-decoration: none;
+//   max-width: 1800px;
+//   max-height: 675px;
+// }
 
-html {
-  font-size: 62.5%;
-  font-family: "Open Sans", sans-serif;
-  font-weight: 500;
-}
+// html {
+//   font-size: 62.5%;
+//   font-family: "Open Sans", sans-serif;
+//   font-weight: 500;
+// }
 
 h1 {
   font-size: 2.4rem;
+  padding-bottom: 25px;
 }
 
-h2 {
-  font-size: 1.8rem;
-}
+// h2 {
+//   font-size: 1.8rem;
+// }
 
-h4 {
-  font-size: 1.4rem;
-}
+// h4 {
+//   font-size: 1.4rem;
+// }
 
-img {
-  height: auto;
-  width: 100%;
-}
+// img {
+//   height: auto;
+//   width: 100%;
+// }
 
-.flex-spacer {
-  width: 100%;
-}
+// .flex-spacer {
+//   width: 100%;
+// }
 
-.App {
-  font-family: sans-serif;
-  text-align: center;
-  width: 100%;
-}
+// .App {
+//   font-family: sans-serif;
+//   text-align: center;
+//   width: 100%;
+// }
 
 // .navbar {
 //   align-items: center;
@@ -187,7 +188,7 @@ img {
 // }
 
 .dark-mode__toggle {
-  background: papayawhip;
+  background: rgb(148, 131, 105);
   border-radius: 50px;
   border: 1px solid black;
   height: 20px;
@@ -222,4 +223,15 @@ img {
 
 .App {
   text-align: center;
+}
+a{
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+}
+.toggle{
+  background-color: white;
+}
+body{
+  font-family: 'Open Sans', sans-serif;
 }

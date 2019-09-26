@@ -14,55 +14,51 @@ const Navbar = () => {
       <NavLogo>
         <Logo>Logo</Logo>
       </NavLogo>
-      <H1>NBA</H1> <H1>Career</H1> <H1>Longevity</H1> <H1>Predictor</H1>
+      {/* <H1>NBA</H1> <H1>Career</H1> <H1>Longevity</H1> <H1>Predictor</H1> */}
       <NavLinks>
-      <Link><NavLink to={"/"}>Home</NavLink></Link>
+      <Link><NavLink className="nav-link" to={"/"}>Home</NavLink></Link>
       <Link><NavLink to={"/login"}>Log-In</NavLink></Link>
       <Link><NavLink to={"/register"}>Register</NavLink></Link>
-      </NavLinks>
       <div className="dark-mode__toggle">
         <div
           onClick={toggleMode}
           className={darkMode ? "toggle toggled" : "toggle"}
         />
       </div>
+      </NavLinks>
     </Nav>
   );
 };
 
 export default Navbar;
 
-const H1 = styled.h1`
-  font-size: 3rem;
-  margin: 3px;
-  padding: 3px;
-  align-items: center;
-`;
+// const H1 = styled.h1`
+//   // font-size: 3rem;
+//   // margin: 3px;
+//   // padding: 3px;
+//   // align-items: center;
+// `;
 
 const Nav = styled.nav `
-    width: 100%;
     height: 6vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     z-index: 999;
     background-color: #272123;
-    display: flex;
-    flex-direction: row;
     font-size: 16px;
 `
 const NavLogo = styled.div `
-    display: flex;
-    align-items: center;
-    width: auto;
+    margin: 20px;
 `
 const Logo = styled.p `
     color: white;
-    margin: 0 20px;
 `
 const NavLinks = styled.div `
     display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    align-items: center;
-    width: 100%;
+    width: 15%;
+    justify-content: space-between;
+    margin: 20px;
 `
 const Link = styled.p `
     margin-right: 20px;

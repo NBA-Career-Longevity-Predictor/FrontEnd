@@ -82,9 +82,10 @@ export default Register;
 const Form = styled.div`
   width: 600px;
   height: 88vh;
-  margin: 30px auto;
+  margin: 0px auto;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
 `;
 
@@ -92,8 +93,8 @@ const Title = styled.h1`
   width: 200px;
   text-align: center;
   font-size: 3.5rem;
-  color: white;
-  background-color: black;
+  color: black;
+  // background-color: black;
   opacity: 0.7;
 `;
 

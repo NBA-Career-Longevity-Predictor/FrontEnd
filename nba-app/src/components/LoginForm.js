@@ -71,9 +71,10 @@ export default Login;
 const Form = styled.div`
   width: 600px;
   min-height: 88vh;
-  margin: 30px auto;
+  margin: 0px auto;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
 `;
 
