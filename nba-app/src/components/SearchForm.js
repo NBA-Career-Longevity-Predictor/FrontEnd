@@ -1,5 +1,6 @@
 import React from "react";
 import axios from "axios";
+import styled from "styled-components";
 
 class Search extends React.Component {
   constructor() {
@@ -12,9 +13,9 @@ class Search extends React.Component {
   }
   componentDidMount() {
     axios
-      .get()
+      .get("https://nba-career-longevity.herokuapp.com/player/{name}")
       .then(res => {
-        this.setState({ data: res.data.results });
+        this.setState({ data: this.getPlayerData });
       })
       .catch(err => console.log(err));
   }
@@ -30,8 +31,7 @@ class Search extends React.Component {
 
   getPlayerData = e => {
       e.preventDefault();
-      this.setState({ getPlayerInfo: this.getPlayerData })
-      console.log(this.getPlayerData);
+      this.setState({ data: this.getPlayerData })
   }
 
   render() {
@@ -39,7 +39,7 @@ class Search extends React.Component {
       <section>
         <form onSubmit={this.onSearch}>
           <div>
-            <input
+            <Input
               onChange={this.handleInputChange}
               placeholder="name"
               value={this.name}
@@ -55,3 +55,7 @@ class Search extends React.Component {
 }
 
 export default Search;
+
+const Input = styled.input`
+  margin-top: 30px;
+`;

@@ -38,28 +38,28 @@ class Login extends React.Component {
   render() {
     return (
       <div>
-        <div>
-          <FormHeader>Log In</FormHeader>
+        <Form>
           <form onSubmit={this.login}>
-            <FormFields>
-              <TheInput
+            <FormGroup>
+            <Title>Log In</Title>
+              <Input
                 type="text"
                 name="username"
                 value={this.state.credentials.username}
                 placeholder=" insert username"
                 onChange={this.handleChange}
               />
-              <TheInput
+              <Input
                 type="password"
                 name="password"
                 value={this.state.credentials.password}
                 placeholder=" insert password"
                 onChange={this.handleChange}
               />
-            </FormFields>
+            </FormGroup>
           </form>
-          <FormButton>Log in</FormButton>
-        </div>
+          <Button>Log in</Button>
+        </Form>
       </div>
     );
   }
@@ -67,95 +67,66 @@ class Login extends React.Component {
 
 export default Login;
 
-const TheInput = styled.input`
-  text-decoration: inherit;
+// const Container = styled.div`
+// background-image: url("NbaMap.jpg");
+// background-size: cover;
+// background-repeat: no-repeat;
+// `;
+
+const Form = styled.div`
+  width: 600px;
+  min-height: 88vh;
+  margin: 30px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+
+const Title = styled.h1`
+  width: 410px;
   text-align: center;
-  // padding: 10px;
+  font-size: 3.5rem;
+`;
+
+const FormGroup = styled.div`
+  width: 400px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+`;
+
+const Input = styled.input`
+  width: 25rem;
+  height: 2.75rem;
+  font-size: 1.2rem;
+  margin: 15px 0;
   border-radius: 7px;
-  padding-left: 11px;
-  font-size: 1.5rem;
-  margin: 20px;
-  height: 2.5rem;
   border: 2px solid black;
+  text-align: center;
   transition: 0.2s ease-in;
   &:hover {
     color: white;
     background: black;
-    // transition: 0.2s ease-in;
   }
 `;
 
-const FormButton = styled.button`
+const Button = styled.button`
   width: 50%;
-  height: 18%;
+  height: 40px;
   border: 2px solid black;
   border-radius: 20px;
   font-size: 1.2rem;
   margin: auto;
   max-height: 100%;
   max-width: 100%;
-  transition: 0.2s ease-in;
+  transition: 0.2 s ease-in;
   margin-top: 15px;
+  background: white;
+
   &:hover {
     color: white;
     background: black;
   }
 `;
-
-const FormFields = styled.div`
-  // background-color: blue;
-  // padding: 20px;
-  border-radius: 0 0 10px 10px;
-  height: 15rem;
-  // border: 4px solid black;
-  width: 400px;
-  display: flex;
-  flex-direction: column;
-  margin: 20px auto;
-`;
-// input{
-//     ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-//         color: black;
-//       }
-//     text-decoration: inherit;
-//     text-align: center;
-//     // padding: 10px
-//     border-radius: 7px;
-//     padding-left: 11px
-//     font-size: 1.5rem;
-//     margin: 20px
-//     height: 2.5rem;
-//     border: 2px solid black;
-//     transition: 0.2s ease-in;
-
-//     &:hover{
-//         color: white;
-//         background: black;
-//         transition: 0.2s ease-in;
-//         ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-//             color: white;
-//           }
-//     }
-// }
-// .error{
-//     margin: 0;
-//     padding: 0;
-//     font-size: 15px;
-// }
-// `;
-
-const FormHeader = styled.h1`
-  // padding: 20px;
-  border-radius: 10px 10px 0 0;
-  font-size: 3.5rem;
-  width: 400px;
-  margin: auto;
-  text-align: center;
-  // border: 4px solid black;
-  color: black;
-  margin-top: 10rem;
-`;
-
-// const FormContainer = styled.div`
-//   height: 100%;
-// `;
