@@ -6,17 +6,17 @@ new Darkmode().showWidget();
 
 var options = {
     top: '0px',
-    bottom: '148px', // default: '32px'
-    right: 'unset', // default: '32px'
-    left: '32px', // default: 'unset'
-    time: '0.5s', // default: '0.3s'
-    mixColor: '#fff', // default: '#fff'
-    backgroundColor: '#fff',  // default: '#fff'
-    buttonColorDark: '#fff',  // default: '#100f2c'
-    buttonColorLight: '#100f2c', // default: '#fff'
-    saveInCookies: false, // default: true,
-    label: '🌓', // default: ''
-    autoMatchOsTheme: true // default: true
+    bottom: '1px',
+    right: 'unset',
+    left: '32px',
+    time: '0.5s',
+    mixColor: '#fff',
+    backgroundColor: '#fff',
+    buttonColorDark: '#fff',
+    buttonColorLight: '#100f2c',
+    saveInCookies: false,
+    label: '🌓',
+    autoMatchOsTheme: true,
   }
   
   const darkmode = new Darkmode(options);

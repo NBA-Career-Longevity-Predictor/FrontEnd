@@ -31,8 +31,9 @@ class Search extends React.Component {
   getPlayerData = e => {
       e.preventDefault();
       this.setState({ getPlayerInfo: this.getPlayerData })
+      console.log(this.getPlayerData);
   }
-  
+
   render() {
     return (
       <section>
