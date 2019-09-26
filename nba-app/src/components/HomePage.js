@@ -5,31 +5,29 @@ import { Link } from "react-router-dom";
 // import HomeImage from "../images/HomeImage.jpg";
 
 import SearchForm from "../components/SearchForm";
+import Player from "./Player";
 
 import styled from "styled-components";
 
 const Container = styled.div`
-background-image: url("HomeImage.jpg");
-background-size: contain;
-background-repeat: no-repeat;
+  background-image: url("HomeImage.jpg");
+  background-size: contain;
+  background-repeat: no-repeat;
 `;
 
-function HomePage(){
-    return(
-        <Container>
-        {/*<h1>Home Page!</h1>*/}
-
-        <div>
-        {/*<StyledSearch>*/}
+function HomePage() {
+  return (
+    <Container>
+      <div>
         <SearchForm />
-        {/*</StyledSearch>*/}
-
-        <p>Already have an account? <Link to="/LoginForm/" className="home-button">Login</Link></p>
-        <p>Don't have an account? <Link to="/RegistrationForm/" className="register-button">Register</Link></p>
-
-        </div>
+      </div>
+      {player.length > 0 ? (
+        player.map(e => <Player key={e.id} player={e} />)
+      ) : (
+        <p>Waiting for search</p>
+      )}
     </Container>
-    )
+  );
 }
 
 export default HomePage;
