@@ -17,7 +17,7 @@ function App() {
       <NavBar />
       <Route exact path="/" component={RegisterForm} />
       <Route path="/login" component={LoginForm} />
-      <Route path="/register" component={RegisterForm} />
+      {/* <Route path="/register" component={RegisterForm} /> */}
       <PrivateRoute path="/home" component={SearchForm} />
       <PrivateRoute path="/user" component={UserProfile} />
       <Footer />

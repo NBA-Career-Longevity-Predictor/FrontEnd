@@ -31,6 +31,12 @@ class Search extends React.Component {
   };
 
   render() {
+    // let player;
+    // if(this.state.data) {
+    //   player = <Player props={this.state.data}/>
+    // }else{
+    //   player = <p>Player data loading...</p>
+    // }
     return (
       <section>
         <form>
@@ -41,11 +47,10 @@ class Search extends React.Component {
               value={this.name}
               name="name"
             />
-            <button type="submit">Search</button>
             <button onClick={this.getPlayerData}>Player Data</button>
           </div>
         </form>
-        <Player props={this.state.data}/>
+        {this.state.data.player && <Player props={this.state.data}/>}
       </section>
     );
   }
